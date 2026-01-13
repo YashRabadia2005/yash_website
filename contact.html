@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Yash Rabadia</title>
+    <meta name="description" content="Contact Yash Rabadia">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+    <div class="mouse-glow" id="mouse-glow"></div>
+
+    <nav>
+        <div class="logo">
+            <h3 style="color: var(--text-primary);">Yash<span style="color: var(--accent-color);">.</span></h3>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="education.html" class="nav-link">Education</a></li>
+            <li><a href="skills.html" class="nav-link">Skills</a></li>
+            <li><a href="contact.html" class="nav-link active">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section style="min-height: 80vh;"> <!-- Auto height for form page -->
+            <h2>Get In Touch</h2>
+            <p>I am seeking a Python Developer role where I can grow and learn.</p>
+            
+            <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); margin-bottom: 3rem;">
+                <div class="card" style="text-align: center;">
+                    <i class="fas fa-phone" style="color: var(--accent-color); margin-bottom: 0.5rem;"></i>
+                    <p>7862836737</p>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <i class="fas fa-envelope" style="color: var(--accent-color); margin-bottom: 0.5rem;"></i>
+                    <p>yashrabadia2005@gmail.com</p>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <i class="fas fa-map-marker-alt" style="color: var(--accent-color); margin-bottom: 0.5rem;"></i>
+                    <p>401 – SHUBH RESIDENCY, Rajkot – 360005</p>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="card" style="max-width: 600px; margin: 0 auto; width: 100%;">
+                <h3 style="margin-bottom: 1.5rem; text-align: center;">Send a Message</h3>
+                <form action="https://formsubmit.co/yashrabadia2005@gmail.com" method="POST" style="display: flex; flex-direction: column; gap: 1rem;">
+                    <!-- FormSubmit Configuration -->
+                    <input type="hidden" name="_subject" value="New Contact Form Submission - Portfolio">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_autoresponse" value="Thank you for contacting me. I will get back to you shortly.">
+                    
+                    <div style="display: flex; gap: 1rem;">
+                        <input type="text" name="name" placeholder="Name" style="flex: 1; padding: 1rem; background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); color: var(--text-primary); border-radius: 8px;" required>
+                        <input type="email" name="email" placeholder="Email" style="flex: 1; padding: 1rem; background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); color: var(--text-primary); border-radius: 8px;" required>
+                    </div>
+                    <input type="text" name="subject" placeholder="Subject" style="padding: 1rem; background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); color: var(--text-primary); border-radius: 8px;">
+                    <textarea name="message" placeholder="Message" rows="5" style="padding: 1rem; background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); color: var(--text-primary); border-radius: 8px; font-family: inherit;" required></textarea>
+                    <button type="submit" class="btn" style="width: 100%; border: none; cursor: none;">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
