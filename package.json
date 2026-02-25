@@ -1,0 +1,12 @@
+{
+  "name": "yash-website",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vercel dev"
+  },
+  "dependencies": {
+    "pg": "^8.11.0"
+  }
+}
+

@@ -96,4 +96,53 @@ document.addEventListener('DOMContentLoaded', () => {
             link.classList.remove('active');
         }
     });
+
+    // --- Contact Form Submission ---
+    const contactForm = document.getElementById('contact-form');
+    const contactStatus = document.getElementById('contact-status');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            if (contactStatus) {
+                contactStatus.textContent = 'Sending...';
+                contactStatus.style.color = 'var(--text-secondary)';
+            }
+
+            const formData = new FormData(contactForm);
+            const data = Object.fromEntries(formData.entries());
+
+            try {
+                const response = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+
+                if (response.ok && result.ok) {
+                    if (contactStatus) {
+                        contactStatus.textContent = 'Thank you! Your message has been sent.';
+                        contactStatus.style.color = 'var(--accent-color)';
+                    }
+                    contactForm.reset();
+                } else {
+                    if (contactStatus) {
+                        contactStatus.textContent = 'Something went wrong. Please try again.';
+                        contactStatus.style.color = '#ff6b6b';
+                    }
+                }
+            } catch (error) {
+                console.error('Error submitting contact form', error);
+                if (contactStatus) {
+                    contactStatus.textContent = 'Network error. Please try again.';
+                    contactStatus.style.color = '#ff6b6b';
+                }
+            }
+        });
+    }
 });
